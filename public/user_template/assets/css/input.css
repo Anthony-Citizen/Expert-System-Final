@@ -1,0 +1,111 @@
+.breadcrumb {
+    padding: 0px;
+	background: #D4D4D4;
+	list-style: none; 
+	overflow: hidden;
+    margin-top: 20px;
+    font-size: 14px;
+}
+.breadcrumb>li+li:before {
+	padding: 0;
+}
+.breadcrumb li { 
+	float: left; 
+}
+.breadcrumb li.active a {
+	background: brown;                   /* fallback color */
+	background: #ffc107 ; 
+}
+.breadcrumb li.completed a {
+	background: brown;                   /* fallback color */
+	background: rgb(201, 139, 59); 
+}
+.breadcrumb li.active a:after {
+	border-left: 30px solid #ffc107 ;
+}
+.breadcrumb li.completed a:after {
+	border-left: 30px solid rgb(201, 139, 59);
+} 
+
+.breadcrumb li a {
+	color: white;
+	text-decoration: none; 
+	padding: 10px 0 10px 45px;
+	position: relative; 
+	display: block;
+	float: left;
+}
+.breadcrumb li a:after { 
+	content: " "; 
+	display: block; 
+	width: 0; 
+	height: 0;
+	border-top: 50px solid transparent;           /* Go big on the size, and let overflow hide */
+	border-bottom: 50px solid transparent;
+	border-left: 30px solid hsla(0, 0%, 83%, 1);
+	position: absolute;
+	top: 50%;
+	margin-top: -50px; 
+	left: 100%;
+	z-index: 2; 
+}	
+.breadcrumb li a:before { 
+	content: " "; 
+	display: block; 
+	width: 0; 
+	height: 0;
+	border-top: 50px solid transparent;           /* Go big on the size, and let overflow hide */
+	border-bottom: 50px solid transparent;
+	border-left: 30px solid white;
+	position: absolute;
+	top: 50%;
+	margin-top: -50px; 
+	margin-left: 1px;
+	left: 100%;
+	z-index: 1; 
+}	
+.breadcrumb li:first-child a {
+	padding-left: 15px;
+}
+.breadcrumb li a:hover { background: #ffc107  ; }
+.breadcrumb li a:hover:after { border-left-color: #ffc107   !important; }
+
+.login-card {
+    border: 0;
+    border-radius: 27.5px;
+    box-shadow: 0 10px 30px 0 rgba(172, 168, 168, 0.43);
+    overflow: hidden; 
+}
+
+.login-card .card-body {
+    padding: 85px 60px 60px; 
+}
+
+@media (max-width: 422px) {
+    .login-card .card-body {padding: 35px 24px; } 
+}
+
+.login-card .login-btn {
+    padding: 13px 20px 12px;
+    background-color: #ffc107;
+    border-radius: 15px;
+    font-size: 17px;
+    font-weight: bold;
+    line-height: 20px;
+    color: #fff;
+    margin-bottom: 24px; 
+}
+.login-card-description {
+    font-size: 25px;
+    color: #000;
+    font-weight: normal;
+    margin-bottom: 15px; }
+
+.login-card .form-control {
+    border: 1px solid #d5dae2;
+    padding: 15px 25px;
+    margin-bottom: 20px;
+    min-height: 45px;
+    font-size: 13px;
+    line-height: 15;
+    font-weight: normal; }
