@@ -95,7 +95,7 @@
 							This is the Right Place
 						</h1>
 						<div class="hero-btns">
-							<a href="form.html" class="main-btn btn-hover wow fadeInUp"
+							<a href="/connector" class="main-btn btn-hover wow fadeInUp"
 								data-wow-delay=".6s">Get Started</a>
 							<a href="https://rebrand.ly/appgrids-gg/" class="main-btn border-btn btn-hover wow fadeInUp"
 								data-wow-delay=".6s">Learn More</a>

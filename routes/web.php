@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ConnectorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,3 +27,6 @@ Route::get('/about', function () {
 Route::get('/history', function () {
     return view('v_history');
 });
+
+Route::get('/connector', [ConnectorController::class, 'index']);
+Route::post('/connector/{id}', [ConnectorController::class, 'next']);

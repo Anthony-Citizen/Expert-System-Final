@@ -77,16 +77,18 @@
             <div class="row">
                 <ul class="breadcrumb">
                     <li class="completed"><a href="javascript:void(0);">Data 1</a></li>
-                    <li class="active"><a href="javascript:void(0);">Data 2</a></li>
-                    <li><a href="javascript:void(0);">Data 3</a></li>
-                    <li><a href="javascript:void(0);">Data 4</a></li>
+                    <li class="completed"><a href="javascript:void(0);">Data 2</a></li>
+                    <li class="completed"><a href="javascript:void(0);">Data 3</a></li>
+                    <li class="completed"><a href="javascript:void(0);">Data 4</a></li>
+                    <li class="active"><a href="javascript:void(0);">Solusi</a></li>
                 </ul>
             </div>
             <div class="card login-card">
                 <div class="row no-gutters">
                         <div class="card-body">
-                            <p class="login-card-description">{{$connector->pertanyaan}}</p>
-                            <form method="POST" action="/connector/{{$connector->ID}}">
+                            <p class="login-card-description">Komponen kendaraan yang rusak : {{$connector->Kerusakan}}</p>
+                            <p class="login-card-description">Solusi yang direkomendasikan : {{$connector->Solusi}}</p>
+                            <form method="" action="/">
                                 <div class="form-group">
                                     <!--<label for="email" class="sr-only">Email</label>
                                     <input type="text" name="email" id="email" class="form-control" value="" placeholder="Email">
@@ -97,8 +99,7 @@
                                 <div class="row">
                                     <div class="col-sm-12 text-center">
                                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                        <input name="submit" id="no" class="btn login-btn btn-md" type="submit" value="Tidak" style="background-color: #FA1E0E; width:20%; margin-right:20px;">
-                                        <input name="submit" id="yes" class="btn login-btn btn-md" type="submit" value="Ya" style="width:20%">
+                                        <input name="submit" id="no" class="btn login-btn btn-md" type="submit" value="Keluar" style="background-color: #FA1E0E; width:20%; margin-right:20px;">
                                     </div>
                                 </div>
                             </form>
