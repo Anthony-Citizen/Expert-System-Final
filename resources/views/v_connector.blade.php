@@ -76,17 +76,17 @@
 		<div class="container">
             <div class="row">
                 <ul class="breadcrumb">
-                    <li class="completed"><a href="javascript:void(0);">Data 1</a></li>
-                    <li class="active"><a href="javascript:void(0);">Data 2</a></li>
-                    <li><a href="javascript:void(0);">Data 3</a></li>
-                    <li><a href="javascript:void(0);">Data 4</a></li>
+                    @for ($i = 1; $i < $connector->seq; $i++)
+                        <li class="completed"><a href="javascript:void(0);">Data {{$i}}</a></li>
+                    @endfor
+                    <li class="active"><a href="javascript:void(0);">Data {{$connector->seq}}</a></li>
                 </ul>
             </div>
             <div class="card login-card">
                 <div class="row no-gutters">
                         <div class="card-body">
                             <p class="login-card-description">{{$connector->pertanyaan}}</p>
-                            <form method="POST" action="/connector/{{$connector->ID}}">
+                            <form method="POST" action="/connector/{{$connector->seq}}/{{$connector->ID}}">
                                 <div class="form-group">
                                     <!--<label for="email" class="sr-only">Email</label>
                                     <input type="text" name="email" id="email" class="form-control" value="" placeholder="Email">

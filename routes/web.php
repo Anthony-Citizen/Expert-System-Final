@@ -29,4 +29,4 @@ Route::get('/history', function () {
 });
 
 Route::get('/connector', [ConnectorController::class, 'index']);
-Route::post('/connector/{id}', [ConnectorController::class, 'next']);
+Route::post('/connector/{seq}/{id}', [ConnectorController::class, 'next']);

@@ -27,13 +27,14 @@ class ConnectorController extends Controller
         //$question = $this->ConnectorModel->question($quest_id);
 
         $data['connector']->pertanyaan = $data1['question'][0]->Pertanyaan;
+        $data['connector']->seq = 1;
 
         //dd($data);
 
         return view('v_connector')->with($data);
     }
 
-    public function next($id, Request $request)
+    public function next($seq, $id, Request $request)
     {
         //dd($request->submit);
         if($request->submit == 'Ya') {
@@ -50,6 +51,7 @@ class ConnectorController extends Controller
                 ];
 
                 $data['connector']->pertanyaan = $data1['question'][0]->Pertanyaan;
+                $data['connector']->seq = $seq+1;
 
                 return view('v_connector')->with($data);
 
@@ -58,6 +60,8 @@ class ConnectorController extends Controller
                 $data = [
                     'connector' => $this->ConnectorModel->getResult($desc),
                 ];
+
+                $data['connector']->seq = $seq+1;
 
                 //dd($data);
 
@@ -77,6 +81,7 @@ class ConnectorController extends Controller
                 ];
 
                 $data['connector']->pertanyaan = $data1['question'][0]->Pertanyaan;
+                $data['connector']->seq = $seq+1;
 
                 return view('v_connector')->with($data);
 
@@ -85,6 +90,8 @@ class ConnectorController extends Controller
                 $data = [
                     'connector' => $this->ConnectorModel->getResult($desc),
                 ];
+
+                $data['connector']->seq = $seq+1;
 
                 return view('v_result')->with($data);
             }

@@ -76,10 +76,9 @@
 		<div class="container">
             <div class="row">
                 <ul class="breadcrumb">
-                    <li class="completed"><a href="javascript:void(0);">Data 1</a></li>
-                    <li class="completed"><a href="javascript:void(0);">Data 2</a></li>
-                    <li class="completed"><a href="javascript:void(0);">Data 3</a></li>
-                    <li class="completed"><a href="javascript:void(0);">Data 4</a></li>
+                    @for ($i = 1; $i < $connector->seq; $i++)
+                        <li class="completed"><a href="javascript:void(0);">Data {{$i}}</a></li>
+                    @endfor
                     <li class="active"><a href="javascript:void(0);">Solusi</a></li>
                 </ul>
             </div>
