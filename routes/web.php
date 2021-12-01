@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ConnectorController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,5 +29,8 @@ Route::get('/history', function () {
     return view('v_history');
 });
 
-Route::get('/connector', [ConnectorController::class, 'index']);
+Route::get('/user/add', [UserController::class, 'add']);
+Route::post('/user/insert', [UserController::class, 'insert']);
+
+Route::get('/connector', [ConnectorController::class, 'index'])->name('connector');
 Route::post('/connector/{seq}/{id}', [ConnectorController::class, 'next']);

@@ -24,7 +24,8 @@
                 <img src="{{asset('user_template')}}/assets/img/hero-car.png" alt="">
             </div>
             <div class="signup-form">
-                <form method="POST" class="register-form" id="register-form">
+                <form action="/user/insert" method="POST" class="register-form" id="register-form" enctype="multipart/form-data">
+                    @csrf
                     <h2>Car Data Input</h2>
                     <div class="form-row">
                         <div class="form-group">
@@ -32,8 +33,8 @@
                             <input type="text" name="name" id="name" required />
                         </div>
                         <div class="form-group">
-                            <label for="father_name">Surname :</label>
-                            <input type="text" name="father_name" id="father_name" required />
+                            <label for="surname">Surname :</label>
+                            <input type="text" name="surname" id="surname" required />
                         </div>
                     </div>
                     <div class="form-group">
@@ -43,12 +44,12 @@
                     <div class="form-radio">
                         <label for="gender" class="radio-label">Gender :</label>
                         <div class="form-radio-item">
-                            <input type="radio" name="gender" id="male" checked>
+                            <input type="radio" name="gender" id="male" value="Male" checked>
                             <label for="male">Male</label>
                             <span class="check"></span>
                         </div>
                         <div class="form-radio-item">
-                            <input type="radio" name="gender" id="female">
+                            <input type="radio" name="gender" id="female" value="Female">
                             <label for="female">Female</label>
                             <span class="check"></span>
                         </div>
@@ -59,7 +60,7 @@
                             <div class="form-select">
                                 <select name="state" id="state">
                                     <option value=""></option>
-                                    <option value="id">Indonesia</option>
+                                    <option value="Indonesia">Indonesia</option>
                                 </select>
                                 <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
                             </div>
@@ -69,11 +70,11 @@
                             <div class="form-select">
                                 <select name="city" id="city">
                                     <option value=""></option>
-                                    <option value="losangeles">Jakarta</option>
-                                    <option value="washington">Bogor</option>
-                                    <option value="washington">Depok</option>
-                                    <option value="washington">Tangerang</option>
-                                    <option value="washington">Bekasi</option>
+                                    <option value="Jakarta">Jakarta</option>
+                                    <option value="Bogor">Bogor</option>
+                                    <option value="Depok">Depok</option>
+                                    <option value="Tangerang">Tangerang</option>
+                                    <option value="Bekasi">Bekasi</option>
                                 </select>
                                 <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
                             </div>
@@ -84,39 +85,40 @@
                         <input type="text" name="birth_date" id="birth_date">
                     </div>
                     <div class="form-group">
-                        <label for="pincode">Chassis Number :</label>
-                        <input type="text" name="pincode" id="pincode">
+                        <label for="c_number">Chassis Number :</label>
+                        <input type="text" name="c_number" id="c_number">
                     </div>
                     <div class="form-group">
-                        <label for="course">Car Model :</label>
+                        <label for="car_type">Car Model :</label>
                         <div class="form-select">
-                            <select name="course" id="course">
+                            <select name="car_type" id="car_type">
                                 <option value=""></option>
-                                <option value="computer">Avanza</option>
-                                <option value="desiger">Agya</option>
-                                <option value="washington">Raize</option>
-                                <option value="washington">Rush</option>
-                                <option value="washington">Hilux</option>
-                                <option value="washington">Yaris</option>
-                                <option value="washington">Vios</option>
-                                <option value="washington">Innova</option>
-                                <option value="washington">Voxy</option>
-                                <option value="washington">Corolla</option>
-                                <option value="washington">HiAce</option>
-                                <option value="washington">Sienta</option>
-                                <option value="washington">Fortuner</option>
-                                <option value="washington">Camry</option>
+                                <option value="Avanza">Avanza</option>
+                                <option value="Agya">Agya</option>
+                                <option value="Raize">Raize</option>
+                                <option value="Rush">Rush</option>
+                                <option value="Hilux">Hilux</option>
+                                <option value="Yaris">Yaris</option>
+                                <option value="Vios">Vios</option>
+                                <option value="Innova">Innova</option>
+                                <option value="Voxy">Voxy</option>
+                                <option value="Corolla">Corolla</option>
+                                <option value="HiAce">HiAce</option>
+                                <option value="Sienta">Sienta</option>
+                                <option value="Fortuner">Fortuner</option>
+                                <option value="Camry">Camry</option>
                             </select>
                             <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="email">Production Year :</label>
-                        <input type="email" name="email" id="email" />
+                        <label for="year">Production Year :</label>
+                        <input type="text" name="year" id="year" />
                     </div>
                     <div class="form-submit">
                         <a href="index.html" id="reset" name="cancel" class="btn" style="border-radius: 50px;">Cancel</a>
-                        <input type="submit" value="Submit Form" class="submit" name="submit" id="submit" />
+                        <!--<input type="submit" value="Submit Form" class="submit" name="submit" id="submit" />-->
+                        <button class="btn btn-primary btn-sm">Submit</button>
                     </div>
                 </form>
             </div>
